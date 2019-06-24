@@ -19,10 +19,10 @@ public class TranslatorImplTest {
         to = new Language("ES", "Spanish");
     }
 
-    @Test(invocationCount = 100, threadPoolSize = 5)
+    @Test(invocationCount = 100, threadPoolSize = 1)
     public void testTranslate() throws Exception {
-        String response = translator.translate(from, to, "Hello World");
-        Assert.assertEquals(response, "Hola Mundo");
+        String response = translator.translate(from, to, "Hello");
+        Assert.assertEquals(response, "Hola");
     }
 
 }
